@@ -1,0 +1,37 @@
+<launch>
+
+	<arg name="model" default="$(find xacro)/xacro $(find robot_description)/myurdf/robot.urdf.xacro" />
+	<arg name="gui" default="true" />
+    
+    <!-- 加载机器人模型 -->
+	<param name="robot_description" command="$(arg model)" />
+
+    <!-- 设置GUI参数，显示关节控制插件 -->
+	<param name="use_gui" value="$(arg gui)"/>
+
+    <!-- 运行joint_state_publisher节点，发布机器人的关节状态  -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+    
+    <!-- Laser Scan -->
+    <include file="$(find lidar_publish)/launch/X4.launch" />
+
+    <!-- Imu -->
+    <include file="$(find imu_publish)/launch/imu.launch"/>
+
+    <!-- Robot Pose EKF -->
+    <include file="$(find robot_bringup)/launch/robot_pose_ekf.launch"/>
+
+    <!-- 里程计消息类型转换 geometry_msgs/PoseWithCovarianceStamped to nav_msgs/Odometry -->
+    <node name="odom_ekf" pkg="robot_bringup" type="odom_ekf.py">
+        <remap from="input" to="/robot_pose_ekf/odom_combined" />
+        <remap from="output" to="/odom_ekf" />
+    </node>
+
+    <!-- 底层控制节点 -->
+    <node name="base_controller" pkg="robot_control" type="base_controller.py" />
+
+</launch>
+

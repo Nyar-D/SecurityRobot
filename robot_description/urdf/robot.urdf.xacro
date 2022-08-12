@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<robot name="robot" xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <xacro:include filename="robot_base.urdf.xacro" />
+    <!-- 还没有上相机-->
+    <!-- <xacro:include filename="robot_camera.urdf.xacro" /> -->
+    <xacro:include filename="robot_laser.urdf.xacro" />
+    
+    <!-- <xacro:include filename="robot_chassis.urdf.xacro" /> -->
+
+</robot>

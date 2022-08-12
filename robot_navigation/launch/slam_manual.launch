@@ -1,0 +1,8 @@
+<launch>
+
+    <include file="$(find ydlidar_ros_driver)/launch/X4.launch" />
+    <include file="$(find robot_bringup)/launch/robot.launch" />
+	<include file="$(find robot_navigation)/launch/gmapping.launch" />
+	<node pkg="robot_control" name="robot_control" type="base_control.py" />
+
+</launch>

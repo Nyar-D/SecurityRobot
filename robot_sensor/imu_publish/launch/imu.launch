@@ -1,0 +1,11 @@
+<launch>
+
+    <node name="imu_publisher" pkg="imu_publish" type="imu_publisher.py" respawn="true"/>
+
+    <!-- imu-tools 滤波 -->
+    <node name="ComplementaryFilterROS" pkg="imu_complementary_filter" type="complementary_filter_node"/>
+
+    <!-- 对于底盘的tf变换 -->
+    <node name="base_imu_link" pkg="tf" type="static_transform_publisher" args="0.0 0.0 0.0 0.0 0.0 0.0 /base_footprint /base_imu_link 50"/>
+    
+</launch>

@@ -1,0 +1,21 @@
+free_thresh: 0.196
+image: /opt/ROS_ws/my_robot_ws/src/robot_navigation/maps/aic.pgm
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -50.0
+- -50.0
+- 0.0
+resolution: 0.05
+rosdistro: 'noetic
+
+  '
+roslaunch:
+  uris:
+    host_dmaster__36603: http://dmaster:36603/
+    host_dmaster__37639: http://dmaster:37639/
+    host_dmaster__41617: http://dmaster:41617/
+rosversion: '1.15.14
+
+  '
+run_id: 3ac92170-16f6-11ed-b1f5-f71cd51642ed

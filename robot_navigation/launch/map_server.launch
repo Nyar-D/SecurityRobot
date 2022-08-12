@@ -1,0 +1,8 @@
+<launch>
+
+  <arg name="map_file" default="$(find robot_navigation)/maps/gen.yaml"/>
+  
+  <rosparam file="$(arg map_file)" command="load" ns="map_config" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="log" />
+  
+</launch>

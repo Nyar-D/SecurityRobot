@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robot_navigation</name>
+  <version>0.0.0</version>
+  <description>TODO</description>
+  <license>TODO</license>
+  <maintainer email="TODO@TODO.com">TODO</maintainer>
+  <author>TODO</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>map_server</exec_depend>
+  <exec_depend>amcl</exec_depend>
+  <exec_depend>gmpapping</exec_depend>
+  <exec_depend>move_base</exec_depend>
+
+</package>
