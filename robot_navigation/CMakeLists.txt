@@ -22,7 +22,7 @@ find_package(catkin REQUIRED
 
 add_service_files(
   FILES
-  MapAddObstacle.srv
+  MapEditObstacle.srv
   MapCrop.srv
   )
   
