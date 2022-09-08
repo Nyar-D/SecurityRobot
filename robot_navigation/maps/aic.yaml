@@ -1,5 +1,5 @@
 free_thresh: 0.196
-image: /opt/ROS_ws/my_robot_ws/src/robot_navigation/maps/aic.pgm
+image: /opt/ROS_ws/security_robot_ws/src/robot_navigation/maps/aic.pgm
 negate: 0
 occupied_thresh: 0.65
 origin:
